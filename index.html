@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juego de la Oca</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>Juego de la Oca</h1>
+  <p>Juego para dos jugadores</p>
+  <main>
+    <div class="principal">
+      <section>
+        <h2>Jugadores</h2>
+        <form id="formulario">
+          <input id="nombreA" placeholder="Nombre jugador A" maxlength="25" required>
+          <input id="nombreB" placeholder="Nombre jugador B" maxlength="25" required>
+          <button type="submit">Guardar nombres</button>
+        </form>
+        <p id="nombres">Jugador A contra Jugador B</p>
+        <p id="fecha"></p>
+      </section>
+
+      <section>
+        <h2>Partida</h2>
+        <p id="estado">Inicio de partida</p>
+        <p id="mensaje" role="status">Pulsa el dado del jugador A para empezar.</p>
+        <div class="botones">
+          <button id="dadoA">Tirar dado A</button>
+          <button id="dadoB" disabled>Tirar dado B</button>
+          <button id="nuevaPartida">Nueva partida</button>
+        </div>
+        <p id="dado">Última tirada: ninguna</p>
+        <p id="posiciones">Jugador A: 0 | Jugador B: 0</p>
+        <div class="tablero-contenedor" id="tablero">
+          <img src="tablero.png" alt="Tablero de la oca con 36 casillas" id="imagenTablero">
+          <div id="fichaA" class="ficha roja" title="Jugador A">A</div>
+          <div id="fichaB" class="ficha azul" title="Jugador B">B</div>
+        </div>
+        <div id="preguntas" hidden>
+          <h3>Pregunta de la casilla</h3>
+          <p id="textoPregunta"></p>
+          <div id="respuestas"></div>
+          <p id="resultadoPregunta"></p>
+          <button id="continuar" hidden>Continuar</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Normas</h2>
+        <p>Casilla 4: avanza a la 9. Casilla 11: vuelve al inicio. Casilla 16: pierde un turno.</p>
+        <p>En las demás casillas hay preguntas: si fallas, retrocedes una casilla. Si dos fichas terminan en la misma casilla, la que estaba allí vuelve a salida. Gana quien llega a la 36.</p>
+      </section>
+
+      <section>
+        <h2>Operaciones</h2>
+          <h3>Funciones: sumar y multiplicar</h3>
+          <input type="number" id="numero1" placeholder="Número 1">
+          <input type="number" id="numero2" placeholder="Número 2">
+          <button id="sumar">Sumar</button>
+          <button id="multiplicar">Multiplicar</button>
+          <p id="resultadoOperacion"></p>
+          <h3>Condicionales y tabla de multiplicar</h3>
+          <input type="number" id="numeroTabla" placeholder="Número del 0 al 10">
+          <button id="hacerTabla">Mostrar tabla</button>
+          <pre id="resultadoTabla"></pre>
+          <h3>Cambio de texto con el DOM</h3>
+          <p id="textoDOM">Texto original</p>
+          <button id="cambiarTexto">Cambiar texto</button>
+      </section>
+    </div>
+
+    <aside>
+      <section>
+        <h2>JSON de la partida</h2>
+        <pre id="panel-json"></pre>
+      </section>
+    </aside>
+  </main>
+</body>
+</html>

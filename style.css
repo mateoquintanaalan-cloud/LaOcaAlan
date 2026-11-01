@@ -1,0 +1,106 @@
+body {
+    font-family: Arial;
+    margin: 20px;
+}
+
+main {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.principal {
+    width: 590px;
+    max-width: 100%;
+}
+
+aside {
+    width: 300px;
+}
+
+section {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+button, input {
+    padding: 5px;
+    margin: 4px;
+}
+
+button:disabled {
+    opacity: 0.5;
+}
+
+.tablero-contenedor {
+    position: relative;
+    width: 100%;
+    max-width: 577px;
+}
+
+#imagenTablero {
+    display: block;
+    width: 100%;
+}
+
+.ficha {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    transform: translate(-50%, -50%);
+    left: 20%;
+    top: 80%;
+    transition: left 0.3s ease, top 0.3s ease;
+}
+
+.roja {
+    background-color: red;
+}
+
+.azul {
+    background-color: blue;
+}
+
+#preguntas {
+    border: 1px solid gray;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#respuestas button {
+    display: block;
+    margin: 5px;
+}
+
+#panel-json {
+    border: 1px solid gray;
+    padding: 5px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-size: 12px;
+}
+
+#resultadoTabla {
+    white-space: pre-wrap;
+}
+
+.modificado {
+    color: blue;
+}
+
+@media (max-width: 800px) {
+    main {
+        display: block;
+    }
+    aside {
+        width: auto;
+    }
+}
